@@ -203,7 +203,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 #personalAreaTime #search_form input:hover, #personalAreaTime #search_form input:focus {
 	background-color: rgba(0, 0, 0, 0.8);
-	border-color: #3B891A;
+	border-color: #388A15;
 	color: #E1E1E1;
 }
 
@@ -262,6 +262,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 
 .portal {
+	margin-top: 28px;
 	border-collapse: collapse;
 	display: table;
 	width: 100%;
@@ -1678,6 +1679,9 @@ ul.breamcrumb .current::before{
 }
 .mainmenu a:hover { color: #000; }
 
+.mainmenu ul a, .mainmenu ul a:visited { color: #E8E361; text-shadow: none; }
+.mainmenu ul a:hover { color: #E8E361; }
+
 .sf-admin li , .mainmenu li { background: transparent; }
 .mainmenu li:first-child { margin-left: -60px; }
 .mainmenu li:nth-child(2) { margin-left: -30px; }
@@ -2848,7 +2852,7 @@ ul#mychars-points-tooltip.dropdown-menu li table tbody tr td a {
 }
 .user-tooltip-avatar img {
 	height: 40px;
-	max-width: 60px;
+	max-widht: 60px;
 	border: 1px solid #CEC5AF;
 	background-color: #999;
 }
@@ -3182,20 +3186,19 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	padding: 4px 14px;
 	line-height: 11px;
 	display: inline-block;
-	color: #CEC5AF;
+	color: #F7FAE5;
 	font-size: 11px;
-	font-weight: bold;
 	text-shadow: none !important;
-	border: 1px solid #FF7500;
+	border: 1px solid #388A15;
 	border-top-left-radius: 25px 100%;
 	border-bottom-right-radius: 25px 100%;
-	background: none repeat scroll 0 0 rgba(255, 117, 0, 0.25);
+	background: none repeat scroll 0 0 rgba(56, 138, 21, 0.6);
 	vertical-align: middle;
 	white-space: nowrap;
 }
 .user-groups a:hover {
-	color: #CF3300;
-	box-shadow: 0px 0px 5px 1px rgba(255, 0, 0, 0.75);
+	color: #FFF;
+	box-shadow: 0px 0px 5px 1px rgba(56, 138, 21, 0.75);
 }
 
 .user-profile .boxHeader {
@@ -3381,7 +3384,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 		width: 100%;
 		height: 30px;
-		line-height: 22px;
+		line-heigt: 22px;
 		font-size: 15px;
 	}
 	
@@ -3657,7 +3660,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 		width: 100%;
 		height: 30px;
-		line-height: 22px;
+		line-heigt: 22px;
 		font-size: 15px;
 	}
 	
