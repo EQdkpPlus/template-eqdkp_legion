@@ -1465,7 +1465,7 @@ hr#system-readmore {
 
 ul.breamcrumb {
 	color: #AAA;
-	border: 1px solid rgba(255, 0, 0, 0.2);
+	border: 1px solid rgba(19, 255, 41, 0.2);
 	border-top-left-radius: 15px 35px;
 	border-top-right-radius: 15px 35px;
 	overflow: hidden;
@@ -1481,7 +1481,7 @@ ul.breamcrumb a {
 	position: relative;
 	padding: 2px 1em 0;
 	height: 16px;
-	color: #E53100;
+	color: #00930E;
 	font-size: 12px;
 	font-family: Georgia,"Palatino Linotype",Times,serif;
 	text-decoration: none;
@@ -1500,9 +1500,9 @@ ul.breamcrumb li:first-child a i { display: none; }
 ul.breamcrumb li:last-child a::after { display: none; }
 
 ul.breamcrumb a:hover {
-	color: #FF7E00;
+	color: #13FF29;
 	text-shadow: 0px 0px 2px #000;
-	background: radial-gradient(#E53100 10%, rgba(229, 49, 0, 0.3) 65%, transparent 100%) repeat scroll 0% 0% transparent;
+	background: radial-gradient(#00930E 10%, rgba(19, 255, 41, 0.29) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
 
 ul.breamcrumb a::after {
@@ -1512,13 +1512,13 @@ ul.breamcrumb a::after {
 	margin: -2px 0 0;
 	padding: 0;
 	font-size: 15px;
-	color: #B03921;
+	color: #006009; /* darken( default green, 35) = #006009 */
 	font-family: 'FontAwesome';
 	z-index: 2;
 }
 
 ul.breamcrumb a:hover::after{
-	color: #E53100;
+	color: #00930E;
 }
 
 ul.breamcrumb .current,
