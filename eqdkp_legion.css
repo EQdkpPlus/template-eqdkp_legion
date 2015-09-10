@@ -17,25 +17,7 @@
  *	You should have received a copy of the GNU Affero General Public License
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-/*
 
-http://jqueryui.com/themeroller/#!zThemeParams=5d000001000506000000000000003d8888d844329a8dfe02723de3e57025317994305bec60bb0778c33b3ab69951024b9ba77b47b9065cddf7ff268c09ded1d65f93317f4cb6c4ad851107b03d8313a2958db84d6c838a35f9856072d20367a9cb34cd659e8873d814a77b83b6c66d38bb920cc1efccdc42f7990ced90b035f9332b26939c7fde1afe0f5066f182c0298f68abbf2033a443b73970147c8ef55ca3c101ad5aff87fcb5e6b0451676c67601304cd4f27fb474e0509f1a2ca77893588492e89819f19c0a50567ad0f2e1a185c4ee2e4af9e4b24b475f70c501fd3624544409e44dc2e9667ff391ba9e5cd3cdc8e0776106fcfe7ce5c5e406dc45f186f04837dd3082fdafbebbff669c4797d1ad7ffcb1dc1704e0cd7ff25ff7e0e75e1d43976c6f345b33c9bedb475dc8046ea1ff97aa455acb41b91ad5728d2d1559f121348dae23a11e2ef7c0e6e2065a8f543d5abf841684beb576277e37143b55b7cbed93ccdfe614d802319924389e6af6a2d2d5f06f3a859b30722d501cdfcace6c862d843ef7c462802dcdfb64c6cc53a5de9b060a5b9814502073cb1d3a34a859ee1524d350d55ec99105e13db7ce5e7644507000e645440534652bcc52121f59bcc8b72d24057a31e3a8724d449dbaaee0801a7dff25a4851c8cf6c8f5a5f4e294fff12b08f5
-@font-face {
-  font-family: "Metallophile";
-  font-style: normal;
-  font-weight: 200;
-  src: url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophilesp8-light-webfont.eot");
-  src: url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophilesp8-light-webfont.eot?#iefix") format("embedded-opentype"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophilesp8-light-webfont.woff2") format("woff2"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophilesp8-light-webfont.woff") format("woff"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophilesp8-light-webfont.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Metallophile";
-  font-style: normal;
-  font-weight: 400;
-  src: url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophile-medium.eot");
-  src: url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophile-medium.eot?#iefix") format("embedded-opentype"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophile-medium.woff2") format("woff2"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophile-medium.woff") format("woff"), url("http://eu.battle.net/wow/static/fonts/seven-oh/metallophile-medium.ttf") format("truetype");
-}
-*/
  /* CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -144,7 +126,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	text-decoration:none;
 }
 #personalArea a:hover {
-	color: #000;
+	color: #13FF29;
 }
 #personalArea a:hover i {
 	text-decoration:none;
@@ -717,11 +699,7 @@ input[type=radio], input[type=checkbox]{
 	font: 14px/100% Arial, Helvetica, sans-serif;
 	padding: .5em 2em .55em;
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
-	border-radius: .5em;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	border-radius: 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.2);
 	margin-top: 2px;
 }
@@ -1060,13 +1038,14 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 .table th a {
+	color: #FFF;
 	text-decoration: none;
-	color: #009CFF;
+	vertical-align: inherit;
 	font-family:'Trebuchet MS',Arial,sans-serif;
 }
 
 .table th a:hover {
-	color: #CEC5AF;
+	color: #13FF29;
 }
 
 .table a { text-shadow: none; }
@@ -1234,7 +1213,7 @@ img {
 	text-shadow: 0px 1px 1px #FFF;
 }
 
-.ui-notify-message { text-align:left; }
+.ui-notify-message { text-align:left; border-radius: 2px; }
 .ui-notify-message h1 { text-align:center; }
 
 input.ui-spinner-input, input.ui-spinner-input:focus, input.ui-spinner-input:hover {
@@ -1247,7 +1226,7 @@ input.ui-spinner-input, input.ui-spinner-input:focus, input.ui-spinner-input:hov
 .up_arrow_red:before {
 	content:"\f0d8";
 	font-family: FontAwesome;
-	color: #FF8700;
+	color: #13FF29;
 	font-size: 18px;
 	margin-right: 2px;
 }
@@ -1268,7 +1247,7 @@ input.ui-spinner-input, input.ui-spinner-input:focus, input.ui-spinner-input:hov
 .down_arrow_red:before{
 	content:"\f0d7";
 	font-family: FontAwesome;
-	color: #FF8700;
+	color: #13FF29;
 	font-size: 18px;
 	margin-right: 2px;
 }
@@ -1303,8 +1282,10 @@ div[aria-describedby="dialog-login"] .password-forgot{
 	border-right: 0px;
 }
 
+.ui-multiselect-header a, .ui-multiselect-header a:hover { color: #000; }
+
 .ui-widget {
-	font-size: 1.0em !important;
+	font-size: .85em !important;
 	font-family: Tahoma, Arial, sans-serif;
 }
 
@@ -1319,7 +1300,7 @@ div[aria-describedby="dialog-login"] .password-forgot{
 .infobox {
 	background-color: #F5F5F5;
 	border: 1px solid #E3E3E3;
-	border-radius: 4px 4px 4px 4px;
+	border-radius: 2px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
 	margin-bottom: 20px;
 	min-height: 20px;
@@ -1328,7 +1309,7 @@ div[aria-describedby="dialog-login"] .password-forgot{
 
 .infobox-large {
 	padding: 10px;
-	border-radius: 6px;
+	border-radius: 2px;
 }
 
 .infobox-blue {
@@ -1651,7 +1632,7 @@ ul.breamcrumb .current::before{
 	outline: 0;
 }
 
-.sf-arrows .sf-with-ul::after { border-color: #6E1700 transparent transparent; }
+.sf-arrows .sf-with-ul::after { border-color: #333 transparent transparent; }
 
 /* general: superfish - admin menu style */
 .sf-admin {
@@ -1739,12 +1720,12 @@ ul.breamcrumb .current::before{
 .sf-ddm > li {
 	margin: 5px 2px 0px;
 	padding: .3em 1em .32em;
-	color: #000;
+	color: #333;
 	vertical-align: baseline;
 	font: 14px/100% Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	border: 1px solid #FF7E00;
-	background: -moz-linear-gradient(center top , #E53101, #FF7E00) repeat scroll 0% 0% transparent;
+	border: 1px solid #00930E;
+	background: linear-gradient(to bottom , #13FF29 0%, #00930E 100%) repeat scroll 0% 0% #13FF29;
 	outline: none;
 	cursor: pointer;
 	text-align: center;
@@ -1776,8 +1757,8 @@ ul.breamcrumb .current::before{
 
 .sf-ddm li.sfHover {
 	color: #000;
-	border: 1px solid #FF7E00;
-	background: -moz-linear-gradient(center top , #E53101, #FF7E00) repeat scroll 0% 0% transparent;
+	border: 1px solid #13FF29;
+	background: linear-gradient(to bottom , #00930E 0%, #13FF29 100%) repeat scroll 0% 0% #00930E;
 }
 
 .sf-menu.sf-ddm ul {
@@ -2387,7 +2368,7 @@ div.error { display: none; }
 	position:relative;
 }
 
-.contentTitle { color: #E53101; }
+.contentTitle { color: #E8E361; }
 
 .contentSideRight{
 	text-align: left;
@@ -2547,7 +2528,6 @@ td.hiddenSmartphone, th.hiddenSmartphone {
 }
 
 .ui-notify a:hover {
-	color: #4E7FA8;
 	text-decoration: underline;
 }
 
