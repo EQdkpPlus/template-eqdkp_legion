@@ -904,8 +904,8 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
 	border: 1px solid #000;
-	background: #555 linear-gradient(to bottom, #8D8D8D 35%, #555 55%);
-	font-weight: normal;
+	background: #00930E linear-gradient(to bottom, #13FF29 15%, #00930E 55%); /* normal green and darken5 = 25% */
+	font-weight: bold;
 	color: #FFF;
 }
 .ui-state-active a,
