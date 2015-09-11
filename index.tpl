@@ -19,6 +19,7 @@
 		<link rel="shortcut icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
 		<link rel="icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
 		{RSS_FEEDS}
+		<!-- LISTENER head -->
 		<style type="text/css">
 			{CSS_CODE}
 			<!-- IF T_BACKGROUND_TYPE != 0 -->
@@ -81,6 +82,7 @@
 			//<![CDATA[
 			{JS_CODE}
 			
+			<!-- IF not S_LOGGED_IN -->
 			$(document).ready(function() {
 				/* Login Dialog */
 				$( "#dialog-login" ).dialog({
@@ -90,6 +92,7 @@
 					autoOpen: false,
 				});
 			});
+			<!-- ENDIF -->
 			
 			<!-- IF S_NORMAL_HEADER -->
 			var user_timestamp_atom = "{USER_TIMESTAMP_ATOM}";
@@ -332,6 +335,8 @@
 	</head>
 	<body id="top" class="<!-- IF S_REPONSIVE -->responsive <!-- ENDIF --><!-- IF not S_NORMAL_HEADER -->simple-header<!-- ENDIF --> {BROWSER_CLASS}<!-- IF T_PORTAL_WIDTH --> fixed_width<!-- ENDIF --><!-- IF S_IN_ADMIN --> admin<!-- ELSE --> frontend<!-- ENDIF -->">
 		<div id="bg-video-wrapper"></div>
+		<!-- LISTENER body_top -->
+		
 		{STATIC_HTMLCODE}
 		<!-- IF S_NORMAL_HEADER -->
 		<header>
@@ -363,7 +368,7 @@
 						<ul>
 							<li>
 								<div class="user-tooltip-container">
-									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}</span></a>
+									<a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}" class="user-tooltip-trigger tooltip-trigger" data-tooltip="user-tooltip"><span class="user-avatar user-avatar-border user-avatar-smallest"><img src="{USER_AVATAR}" alt="{USER_NAME}"/></span> <span class="hiddenSmartphone">{USER_NAME}<!-- IF USER_IS_AWAY --> <i class="fa fa-suitcase fa-lg"></i><!-- ENDIF --></span></a>
 									<ul class="dropdown-menu user-tooltip" role="menu" id="user-tooltip">
 										<li><a href="{U_USER_PROFILE}">
 												<div class="user-tooltip-avatar">
@@ -376,6 +381,12 @@
 											</a>
 										</li>
 										<li class="tooltip-divider"></li>
+										<!-- BEGIN user_tooltip_addition -->
+										<li class="{user_tooltip_addition.CLASS}">{user_tooltip_addition.TEXT}</li>
+										<!-- END user_tooltip_addition -->
+										<!-- IF USER_IS_AWAY -->
+										<li class="user_tooltip_awaymode"><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}#fragment-calendar"><i class="fa fa-suitcase fa-lg"></i> {L_calendar_user_is_away}</a></li>
+										<!-- ENDIF -->
 										<li><a href="{EQDKP_CONTROLLER_PATH}Settings{SEO_EXTENSION}{SID}"><i class="fa fa-cog fa-lg"></i> {L_settings}</a></li>
 										<li><a href="{U_LOGOUT}"><i class="fa fa-sign-out fa-lg"></i> {L_logout}</a></li>
 									</ul>
@@ -466,6 +477,7 @@
 			
 		<header>
 			<div id="header">
+				<!-- LISTENER header_top -->
 				<div id="logoContainer" class="{T_LOGO_POSITION}">
 					<div id="logoArea">
 						<!-- IF HEADER_LOGO -->
@@ -477,16 +489,18 @@
 							<h1>{MAIN_TITLE}</h1>
 							<h2>{SUB_TITLE}</h2>
 					</hgroup><!-- close titles-->
-				
+					<!-- LISTENER logo_container -->
 					<div class="clear noheight">&nbsp;</div>
 				</div>
-				{PORTAL_BLOCK1}
+				<div class="portal_block1">{PORTAL_BLOCK1}</div>
+				<!-- LISTENER header_bottom -->
 			</div> <!-- close header-->
 		</header>
 		
 		
 		<section id="contentContainer">
 			<a id="content"></a>
+			<!-- LISTENER content_container_top -->
 			<header>
 				<nav id="nav">
 					<div id="mainmenu">
@@ -509,6 +523,7 @@
 							<!-- ENDIF -->
 							</div>
 						</div>
+						<!-- LISTENER mainmenu -->
 					</div><!-- close mainmenu -->
 					
 					<!-- IF S_IN_ADMIN -->
@@ -516,57 +531,76 @@
 						<div class="hiddenSmartphone">
 							{ADMIN_MENU}
 						</div>
+						<!-- LISTENER adminmenu -->
 					</div>
 					<!-- ENDIF -->
 				</nav>
 			</header>
 			
 			<div class="portal">
+				<!-- LISTENER portal_top -->
 				<div class="columnContainer">
 					<!-- IF S_PORTAL_LEFT -->
 					<aside class="first column portal-left" style="<!-- IF T_COLUMN_LEFT_WIDTH -->min-width:{T_COLUMN_LEFT_WIDTH};max-width:{T_COLUMN_LEFT_WIDTH};<!-- ELSE -->min-width: 200px;<!-- ENDIF -->">
 						<div class="columnInner">
+							<!-- LISTENER portal_left_top -->
 							{PORTAL_LEFT}
+							<!-- LISTENER portal_left_bottom -->
 						</div> <!-- close first column -->
 					</aside>
 					<!-- ENDIF -->
 					
 					<article class="second column <!-- IF not S_PORTAL_RIGHT -->no_third_column<!-- ENDIF -->">
 						<div class="columnInner">
+							<!-- LISTENER content_middle_top -->
 							<!-- IF S_SHOW_COOKIE_HINT -->
 							<div class="infobox infobox-large infobox-blue clearfix">
 								<i class="fa-info-circle fa pull-left fa-2x"></i> {COOKIE_HINT}
+								<i class="fa-times fa pull-right hand" onclick="$(this).parent().parent().hide()"></i>
 							</div>
-							<!-- ENDIF -->	
+							<!-- ENDIF -->
+							
 							<!-- BEGIN global_warnings -->
 							<header>
 								<div class="infobox infobox-large infobox-{global_warnings.CLASS} clearfix">
 									<i class="{global_warnings.ICON} fa-3x pull-left"></i> {global_warnings.MESSAGE}
+									<!-- IF global_warnings.S_DISMISS -->
+									<i class="fa-times fa pull-right hand" onclick="$(this).parent().parent().hide()"></i>
+									<!-- ENDIF -->
 								</div>
 							</header>
 							<!-- END global_warnings -->	
 							<aside id="portal-middle">
+								<!-- LISTENER portal-middle-top -->
 								{PORTAL_MIDDLE}
+								<!-- LISTENER portal-middle-bottom -->
 							</aside>
 							<!-- ENDIF -->
 							<div id="contentBody" class="{PAGE_CLASS}<!-- IF not S_NORMAL_HEADER --> simple-header <!-- ENDIF --><!-- IF not S_NORMAL_FOOTER --> simple-footer <!-- ENDIF -->">
 								<div id="contentBody2">
+									<!-- LISTENER content_body_top -->
 									{GBL_CONTENT_BODY}
+									<!-- LISTENER content_body_bottom -->
 								</div>	
 							</div><!-- close contentBody -->
+							<!-- LISTENER content_middle_bottom -->
+							
 							<!-- IF S_NORMAL_FOOTER -->
 							<aside id="portal-footer">
-							{PORTAL_BOTTOM}
+								<!-- LISTENER portal-bottom-top -->
+								{PORTAL_BOTTOM}
+								<!-- LISTENER portal-bottom-bottom -->
 							</aside>
 							<footer class="debug">
-							<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
-							<!-- IF S_SHOW_DEBUG -->
-							<br /><div class="center">
-								<span class="debug-info">SQL Querys: {EQDKP_QUERYCOUNT} | in {EQDKP_RENDERTIME} | {EQDKP_MEM_PEAK} |
-									<a href="http://validator.w3.org/check/referer" target="_top">XHTML Validate</a>
-								</span>
-							</div>
-							<!-- ENDIF -->
+								<!-- LISTENER content-footer-debug -->
+								<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
+								<!-- IF S_SHOW_DEBUG -->
+								<br /><div class="center">
+									<span class="debug-info">SQL Querys: {EQDKP_QUERYCOUNT} | in {EQDKP_RENDERTIME} | {EQDKP_MEM_PEAK} |
+										<a href="http://validator.w3.org/check/referer" target="_top">XHTML Validate</a>
+									</span>
+								</div>
+								<!-- ENDIF -->
 							</footer>
 						</div>
 					</article><!-- close second column -->
@@ -574,7 +608,9 @@
 					<!-- IF S_PORTAL_RIGHT -->
 					<aside class="third column portal-right" style="<!-- IF T_COLUMN_RIGHT_WIDTH -->min-width:{T_COLUMN_RIGHT_WIDTH};max-width:{T_COLUMN_RIGHT_WIDTH}<!-- ELSE -->min-width: 200px;<!-- ENDIF -->">
 						<div class="columnInner">
+							<!-- LISTENER portal-right-top -->
 							{PORTAL_RIGHT}
+							<!-- LISTENER portal-right-bottom -->
 						</div>
 					</aside>
 					<!-- ENDIF -->
@@ -582,15 +618,20 @@
 			</div>
 			
 			<footer id="contentFooter">
+				<!-- LISTENER content-footer-top -->
 				<div class="floatLeft">
 					<!-- IF S_REPONSIVE -->
 					<div class="hiddenDesktop toggleResponsive"><a href="{SID}&toggleResponsive=desktop"><i class="fa fa-lg fa-desktop"></i> {L_desktop_version}</a></div>
 					<!-- ELSE -->
 					<div class="toggleResponsive"><a href="{SID}&toggleResponsive=mobile"><a href="{SID}&toggleResponsive=mobile"><i class="fa fa-lg fa-mobile-phone"></i> {L_mobile_version}</a></div>
 					<!-- ENDIF -->
+					
+					<!-- LISTENER content-footer-left -->
 				</div>
 				<div class="floatRight">
-					<!-- IF not S_LOGGED_IN -->
+					<!-- LISTENER content-footer-right -->
+					
+					<!-- IF not S_LOGGED_IN and S_STYLECHANGER -->
 					<a href="javascript:change_style();"><i class="fa fa-paint-brush"></i> {L_change_style}</a>
 					<!-- ENDIF -->
 					
@@ -609,17 +650,22 @@
 		</section>
 		
 		<footer id="footer">
-				{PORTAL_BLOCK2}
+				<!-- LISTENER footer_top -->
+				<div class="portal_block2">{PORTAL_BLOCK2}</div>
 				{EQDKP_PLUS_COPYRIGHT}
+				<!-- LISTENER footer_bottom -->
 		</footer><!-- close footer -->
 	</div><!-- close wrapper -->
 	
 	<!-- ELSE -->
 		<!-- IF S_SHOW_QUERIES --><br />{DEBUG_TABS}<!-- ENDIF -->
+		<!-- LISTENER debug -->
 	<!-- ENDIF -->
-
+	
+	<!-- IF not S_LOGGED_IN -->
 	<div id="dialog-login" title="{L_login}">
 		<form method="post" action="{EQDKP_CONTROLLER_PATH}Login{SEO_EXTENSION}{SID}" name="login" id="login" class="fv_checkit">
+			<!-- LISTENER login_popup -->
 			<!-- IF S_BRIDGE_INFO -->
 			<div class="infobox infobox-large infobox-blue clearfix">
 				<i class="fa fa-info-circle fa-4x pull-left"></i> {L_login_bridge_notice}
@@ -662,6 +708,8 @@
 			<!-- ENDIF -->
 		</form>
 	</div>
+	<!-- ENDIF -->
+	
 	<div class="reponsiveTestClass" style="display:none;"><!-- This div is for testing the responsiveness --></div>
 	<script type="text/javascript">
 		{JS_CODE_EOP}
@@ -675,6 +723,7 @@
    		 });
 	</script>
 	{FOOTER_CODE}
+	<!-- LISTENER body_bottom -->
 	<a id="bottom"></a>
 	</body>
 </html>
