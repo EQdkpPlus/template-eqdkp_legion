@@ -91,6 +91,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	  bottom: 0;
 		left: 0;
 	overflow: hidden;
+	z-index: -100;
 }
 #bg-video-wrapper video {
 	display: block;
@@ -99,7 +100,6 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 		left: 50%;
 	max-width: none;
 	margin-left: -960px;
-	z-index: -100;
 	opacity: 0;
 }
 
