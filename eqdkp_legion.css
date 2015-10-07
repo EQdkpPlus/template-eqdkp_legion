@@ -63,15 +63,15 @@ html { min-height: 100%; }
 body {
 	background: url('@{eqdkpBackgroundImage}') no-repeat scroll ~"center top / 2560px auto",
 				url('@{eqdkpTemplateImagePath}bg-bottom.jpg') no-repeat scroll center bottom,
-				url('@{eqdkpTemplateImagePath}bg-repeat.jpg') repeat-y scroll center top #100805;
-	color: #F7FAE5;
+				url('@{eqdkpTemplateImagePath}bg-repeat.jpg') repeat-y scroll center top @eqdkpBodyBackgroundColor;
+	color: @eqdkpBodyFontColor;
 	text-align: center;
-	font-size: 15px;
-	font-family: 'Metallophile', 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: @eqdkpBodyFontSize;
+	font-family: @eqdkpBodyFontFamily;
 	font-weight: 200;
 }
 
-body.simple-header { margin: 5px; background: #100805; }
+body.simple-header { margin: 5px; background: @eqdkpBodyBackgroundColor; }
 
 h1, h2, h3 {
 	font-weight: 400;
@@ -587,20 +587,20 @@ ul.mainmenu li a.link_indexphp:before, ul.mainmenu li a.link_entry_home:before {
 
 /* Links */
 a, a:link, a:active, a:visited {
-	color: #13FF29;
+	color: @eqdkpBodyLinkColor;
 	text-decoration: none;
-	text-shadow: 0px 0px 80px #10D222,
-				 0px 0px 60px rgba(16, 210, 34, 0.9),
-				 0px 0px 40px rgba(16, 210, 34, 0.8),
-				 0px 0px 20px rgba(16, 210, 34, 0.7);
+	text-shadow: 0px 0px 80px @eqdkpBodyLinkColor,
+				 0px 0px 60px fade(@eqdkpBodyLinkColor, 90),
+				 0px 0px 40px fade(@eqdkpBodyLinkColor, 80),
+				 0px 0px 20px fade(@eqdkpBodyLinkColor, 70);
 }
 a:hover {
-	color: #FFF;
+	color: @eqdkpBodyLinkColorHover;
 	text-decoration: none;
-	text-shadow: 0px 0px 80px #FFF,
-				 0px 0px 60px rgba(255, 255, 255, 0.9),
-				 0px 0px 40px rgba(255, 255, 255, 0.8),
-				 0px 0px 20px rgba(255, 255, 255, 0.7);
+	text-shadow: 0px 0px 80px @eqdkpBodyLinkColorHover,
+				 0px 0px 60px fade(@eqdkpBodyLinkColorHover, 90),
+				 0px 0px 40px fade(@eqdkpBodyLinkColorHover, 80),
+				 0px 0px 20px fade(@eqdkpBodyLinkColorHover, 70);
 }
 
 .ui-tabs-panel a, .ui-tabs-panel a:link, .ui-tabs-panel a:active,.ui-tabs-panel a:visited{
