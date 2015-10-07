@@ -108,8 +108,8 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	margin-bottom: 10px;
 	padding: 0 125px;
 	min-height: 78px;
-	background: url('@{eqdkpTemplateImagePath}user-nav-bar-mid.png') repeat scroll ~"center -27px / 6% 100px" transparent;
-	color: #000;
+	background: url('@{eqdkpTemplateImagePath}user-nav-bar-mid.png') repeat scroll ~"center -27px / 6% 100px" @eqdkpUserareaBackgroundColor;
+	color: @eqdkpUserareaFontColor;
 	text-align:left;
 }
 #personalArea:before, #personalArea:after {
@@ -121,22 +121,22 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 #personalArea:before {
 	left: -26px;
-	background: url('@{eqdkpTemplateImagePath}user-nav-bar-left.png') no-repeat scroll ~"right 1px / 177px 100px" transparent;
+	background: url('@{eqdkpTemplateImagePath}user-nav-bar-left.png') no-repeat scroll ~"right 1px / 177px 100px" @eqdkpUserareaBackgroundColor;
 }
 #personalArea:after {
 	right: 0;
 	width: 147px;
-	background: url('@{eqdkpTemplateImagePath}user-nav-bar-right.png') no-repeat scroll ~"left 1px / 177px 100px" transparent;
+	background: url('@{eqdkpTemplateImagePath}user-nav-bar-right.png') no-repeat scroll ~"left 1px / 177px 100px" @eqdkpUserareaBackgroundColor;
 }
 
 #personalArea a {
-	color: #000;
+	color: @eqdkpUserareaLinkColor;
 	text-shadow: 0px 0px 10px #95BE8E,
 				 0px 0px 10px #95BE8E;
 	text-decoration:none;
 }
 #personalArea a:hover {
-	color: #13FF29;
+	color: @eqdkpUserareaLinkColorHover;
 }
 #personalArea a:hover i {
 	text-decoration:none;
@@ -169,7 +169,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	position: absolute;
 	   right: 190px;
 	margin-top: 14px;
-	color: #000;
+	color: @eqdkpUserareaFontColor;
 	text-shadow: 0px 0px 10px #95BE8E,
 				 0px 0px 10px #95BE8E;
 	letter-spacing: -1px;
@@ -200,11 +200,11 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 
 #personalAreaTime button, #personalAreaTime button:hover {
+	position: absolute;
+		 top: -3px;
+	   right: -12px;
 	background: none repeat scroll 0 0 transparent !important;
 	border: medium none;
-	position: absolute;
-	right: 2px;
-	top: -4px;
 	cursor:pointer;
 	box-shadow: none;
 }
@@ -216,7 +216,6 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 				border-color   1s ease 0s;
 }
 #personalAreaTime .search_button {
-	top: -6px !important;
 	width: 25px;
 	opacity: 0;
 	transition: opacity 1s ease-in;
