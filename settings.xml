@@ -10,13 +10,13 @@
 	<column_left_width>0px</column_left_width>
 	<portal_width>0px</portal_width>
 	
-	<body_background_color></body_background_color>
-	<body_font_color></body_font_color>
-	<body_font_size></body_font_size>
-	<body_font_family></body_font_family>
-	<body_link_color></body_link_color>
-	<body_link_color_hover></body_link_color_hover>
-	<body_link_decoration></body_link_decoration>
+	<body_background_color>rgb(16, 8, 5)</body_background_color>
+	<body_font_color>rgb(247, 250, 229)</body_font_color>
+	<body_font_size>15</body_font_size>
+	<body_font_family>'Metallophile', 'Trebuchet MS', Helvetica, sans-serif</body_font_family>
+	<body_link_color>rgb(19, 255, 41)</body_link_color>
+	<body_link_color_hover>rgb(255, 255, 255)</body_link_color_hover>
+	<body_link_decoration>none</body_link_decoration>
 	
 	<container_background_color></container_background_color>
 	<container_border_color></container_border_color>
