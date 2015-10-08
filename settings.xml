@@ -27,12 +27,12 @@
 	<content_link_color_hover></content_link_color_hover>
 	<content_border_color></content_border_color>
 	<content_accent_color></content_accent_color>
-	<content_contrast_color></content_contrast_color>
-	<content_contrast_background_color></content_contrast_background_color>
-	<content_contrast_border_color></content_contrast_border_color>
-	<content_positive_color></content_positive_color>
-	<content_negative_color></content_negative_color>
-	<content_neutral_color></content_neutral_color>
+	<content_contrast_color>rgb(247, 250, 229)</content_contrast_color>
+	<content_contrast_background_color>rgba(19, 255, 41, 0.1)</content_contrast_background_color>
+	<content_contrast_border_color>rgba(19, 255, 41, 0.2)</content_contrast_border_color>
+	<content_positive_color>rgb(51, 204, 51)</content_positive_color>
+	<content_negative_color>rgb(226, 59, 48)</content_negative_color>
+	<content_neutral_color>rgb(153, 153, 153)</content_neutral_color>
 	<content_highlight_color></content_highlight_color>
 	
 	<userarea_background_color>rgba(0, 0, 0, 0)</userarea_background_color>

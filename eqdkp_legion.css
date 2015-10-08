@@ -500,14 +500,13 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 
 /* Toggle Buttons for portalbox */
-.toggle_button:before{
+.toggle_button:before {
 	content:"\f078";
 	font-family: FontAwesome;
 	cursor: pointer;
 	float: right;
 	padding-right: 3px;
 }
-
 .toggle_button.active:before {
 	content:"\f077";
 	font-family: FontAwesome;
@@ -520,9 +519,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	color: rgba(170, 170, 170, 0.5);
 }
 
-.confirmdialog{
-	text-align:left;
-}
+.confirmdialog { text-align:left; }
 
 /***************************************************
  * MENUS
@@ -981,20 +978,12 @@ a.blue, a.blue:hover, a.button, a.button:hover {
 }
 
 /*Image Button without value*/
-.novalue {
-	width: 24px;
-}
+.novalue { width: 24px; }
 
 /* general: positive/negative/neutral */
-.positive {
-	color: #33cc33;
-}
-.negative {
-	color: #e23b30;
-}
-.neutral {
-	color: #999;
-}
+.positive { color: @eqdkpContentPositiveColor; }
+.negative { color: @eqdkpContentNegativeColor; }
+.neutral { color: @eqdkpContentNeutralColor; }
 
 /* Hack for tinymce in colorswitch tables */
 .mceLayout tr:nth-child(odd),.mceLayout>td:nth-child(odd),
@@ -1971,26 +1960,22 @@ ul.breamcrumb .current::before{
 #admininfos_tabs .fa-google-plus-square { color: #E11556; background-color: #000000; height: 20px; width: 18px; border-radius: 30%; text-shadow: none; }
 
 /* ACP: manage menues */
-.manage_menues_block { 
+.manage_menues_block {
 	list-style-type: none; padding: 3px; margin:6px; border:1px dashed #666; min-width:180px;
 }
 .manage_menues_block2 {
 	list-style-type: none; padding: 3px; margin:6px; border:3px dashed #666; min-width:180px;
 }
-.manage_menues_block ul {
-	margin:0px;
-	padding:0px;
-}
+.manage_menues_block ul { margin: 0; padding: 0; }
 .manage_menues_block li, .manage_menues_block2 li {
 	list-style-type: none; padding: 5px;
-	margin:5px; background-color:#F5F5F5; cursor:pointer; color:#666;
+	margin:5px; cursor:pointer; color:#666;
 }
 
 .manage_menues_block .toggle_button {
 	font-family: 'Trebuchet MS',Arial,sans-serif;
 	font-weight: bold;
-	border-bottom: 1px solid #CCCCCC;
-	background-color: #EAEAEA;
+	border-bottom: 1px solid #666;
 	padding: 3px;
 }
 
