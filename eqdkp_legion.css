@@ -2437,6 +2437,10 @@ table.guesttable {
 table.guesttable td{
 	color:black;
 }
+table.guesttable_status td{
+	border: 0;
+	padding: 2px;
+}
 .style1 {
 	text-align: center;
 }
