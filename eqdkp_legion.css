@@ -877,21 +877,17 @@ select[readonly], textarea[readonly], input[type="text"][readonly], input[type="
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24') !important;
 }
 
-a.blue, a.blue:hover, a.button, a.button:hover {
-	color: #d9eef7;
-	line-height: 15px;
-}					
-.blue, .button, input[type="submit"], input[type="button"], input[type="reset"], button {
+.blue, .button, a.blue, a.button, input[type="submit"], input[type="button"], input[type="reset"], button {
 	color: @eqdkpButtonFontColor;
 	border: solid 1px @eqdkpButtonBorderColor;
 	background: linear-gradient(to top, @eqdkpButtonBackgroundColor, @eqdkpButtonBorderColor) @eqdkpButtonBackgroundColor;
 }
-.blue:hover, .button:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:not(.ui-widget):hover {
+.blue:hover, .button:hover, a.blue:hover, a.button:hover, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, button:not(.ui-widget):hover {
 	color: @eqdkpButtonFontColorHover;
 	border: solid 1px @eqdkpButtonBorderColorHover;
 	background: linear-gradient(to top, @eqdkpButtonBackgroundColorHover, @eqdkpButtonBorderColorHover) @eqdkpButtonBackgroundColorHover;
 }
-.blue:active, .button:hover, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, button:not(.ui-widget):active {
+.blue:active, .button:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, button:not(.ui-widget):active {
 	color: @eqdkpButtonFontColorHover;
 	background: linear-gradient(to top, @eqdkpButtonBackgroundColorHover, @eqdkpButtonBorderColorHover) @eqdkpButtonBackgroundColorHover;
 }
@@ -1315,6 +1311,8 @@ div[aria-describedby="dialog-login"] .password-forgot{
 .confirmdialog li { margin-left: 30px; list-style: square inside none; }
 
 .qtip-content { font-size: .75em; }
+
+.progressbar_label { color: #666; }
 
 
 /* general: information boxes NEW */
@@ -3497,55 +3495,63 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 }
 
 
+/* Image Gallery */
 ul.image-gallery {
 	list-style-type: none !important;
-}
-
-ul.image-gallery li {
-	float: left;
-	border: 2px solid #CFCFCF;
-	height: 160px;
-	width: 160px;
-	border-radius: 3px 3px 3px 3px;
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-	margin-right: 25px;
-	margin-bottom: 25px;
-	background-color: #fff;
-}
-ul.image-gallery li a {
-	height: 150px;
-	overflow: hidden;
-	display: block;
-	line-height: 150px;
-}
-
-ul.image-gallery li img {
-	padding: 5px;
-}
-
-ul.image-gallery li.folder {
-	text-align: center;
-	overflow: hidden;
-}
-
-ul.image-gallery li.folderup {
-	text-align: center;
-}
-
-ul.image-gallery li.folderup a,
-ul.image-gallery li.folder a {
-	line-height: 20px;
-}
-
-ul.image-gallery li.folderup i {
-	font-size: 120px;
-	line-height: 120px;
-}
-
-ul.image-gallery li.folder i {
-	margin-top: 20px;
-	font-size: 100px;
-	line-height: 100px;
+	
+	li {
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+	}
+	li a {
+		display: block;
+	}
+	li img {
+		padding: 5px;
+	}
+	li.folder {
+		text-align: center;
+		overflow: hidden;
+	}
+	li.folderup {
+		text-align: center;
+	}
+	li.folder a,
+	li.folderup a {
+		line-height: 20px;
+	}
+	li.folder i {
+		margin-top: 20px;
+		font-size: 100px;
+		line-height: 100px;
+	}
+	li.folderup i {
+		font-size: 120px;
+		line-height: 120px;
+	}
+	li.image a {
+		position: relative;
+	}
+	li.image a:before, 
+	li.image a:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top:5px; right:5px; bottom:5px; left:5px;
+		border: 10px solid transparent;
+	}
+	li.image a:before {
+		border-image: url('@{eqdkpTemplateImagePath}image-border.png') 10 10 10 10 repeat repeat;
+	}
+	li.image a:after {
+		opacity: 0;
+		transition: opacity .6s ease 0s;
+		border-image: url('@{eqdkpTemplateImagePath}image-border-glow.png') 10 10 10 10 repeat repeat;
+	}
+	li.image:hover a:after {
+		opacity: 1;
+	}
 }
 
 td.twinktd > * {
@@ -3555,8 +3561,8 @@ td.twinktd i {
 	margin-top: 5px;
 }
 
-/* Colorbox */
 
+/* Colorbox */
 button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	box-shadow: none;
 }
@@ -4413,7 +4419,7 @@ button.thirdpartylogin.openid {
 .bigDateContainer {
 	text-align: center;
 	width: 100px;
-	border-right: 1px solid @eqdkpContentBorderColor;
+	border-right: 1px solid #666;
 	margin-right: 12px;
 	display: block;
 	position: relative;
