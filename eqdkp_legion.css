@@ -1870,6 +1870,11 @@ ul.breamcrumb .current::before{
 	text-align: left;
 	background: none;
 	
+	li:hover {
+		color: @eqdkpButtonFontColorHover;
+		border: solid 1px @eqdkpButtonBorderColorHover;
+		background: linear-gradient(to top, @eqdkpButtonBackgroundColorHover, @eqdkpButtonBorderColorHover) @eqdkpButtonBackgroundColorHover;
+	}
 	li ul {
 		padding: .3em 0;
 	}
@@ -1878,6 +1883,7 @@ ul.breamcrumb .current::before{
 		padding: .2em 1em;
 	}
 	li li:hover {
+		border-color: transparent;
 		background: linear-gradient(to right,
 			rgba(255, 255, 255, 0.1) 0%,
 			rgba(170, 170, 170, 0.35) 40%,
