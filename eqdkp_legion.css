@@ -1865,96 +1865,61 @@ ul.breamcrumb .current::before{
 	.sf-with-ul:hover:after { border-top-color: @eqdkpButtonFontColorHover !important; }
 }
 
-
-
-
-
-/* Button Drodown-Menu */
 .sf-btn-ddm {
 	margin-left: 10px;
 	text-align: left;
 	background: none;
-}
-.sf-btn-ddm > li a, .sf-btn-ddm > li a:visited, .sf-btn-ddm > li a:link, .sf-btn-ddm > li a:active {
-	color: #fff !important;
-	padding-top: 0.25em;
-	padding-bottom: 0.25em;
-	padding-left: 0.5em;
-}
-.sf-btn-ddm a:hover {
-	background: transparent;
-}
-
-.sf-btn-ddm li:hover ul,
-.sf-btn-ddm li.sfHover ul {
-	top: 2.5em;
-	left:0px;
-}
-
-.sf-btn-ddm > li {
-	font: 14px/100% Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	padding: .3em 1em .32em;
-	background: #0095cd;
-	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-	background: -moz-linear-gradient(top, #00adee, #0078a5);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
-	color: #d9eef7;
-	border: solid 1px #0076a3;
-	vertical-align: baseline;
-	margin: 0 2px;
-	outline: none;
-	cursor: pointer;
-	text-align: left;
-	text-decoration: none;
-	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
-	border-radius: .5em;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-.sf-btn-ddm li ul {
-	padding: .3em 1em .32em;
-	margin: 0 !important;
-}
-
-.sf-btn-ddm li li, .sf-btn-ddm li.sfHover li.sfHover {
-	background: transparent;
-	color: #606060;
-	padding: 4px 10px 4px 10px;
-}
-
-.sf-btn-ddm li li:hover {
-	background: #ededed;
-}
-
-.sf-btn-ddm li.sfHover {
-	background: #00678e;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-	background: -moz-linear-gradient(top, #0095cc, #00678e);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
-}
-
-.sf-menu.sf-btn-ddm ul{
-	color: #606060;
-	border: solid 1px #b7b7b7;
-	background: #fff;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
-	background: -moz-linear-gradient(top, #fff, #ededed);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
-	-webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
-	border-radius: .5em;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	padding: 3px;
-}
-
-.sf-menu.sf-btn-ddm ul a, .sf-menu.sf-btn-ddm ul a:hover {
-	color: #606060 !important;
+	
+	li ul {
+		padding: .3em 0;
+	}
+	li li {
+		text-align: left;
+		padding: .2em 1em;
+	}
+	li li:hover {
+		background: linear-gradient(to right,
+			rgba(255, 255, 255, 0.1) 0%,
+			rgba(170, 170, 170, 0.35) 40%,
+			rgba(207, 207, 207, 0.3) 50%,
+			rgba(170, 170, 170, 0.35) 60%,
+			rgba(255, 255, 255, 0.1) 100%
+		) repeat scroll 0% 0% transparent;
+	}
+	li li a {
+		color: lighten(@eqdkpButtonFontColor, 46.5) !important;
+	}
+	li li a:hover {
+		color: lighten(@eqdkpButtonFontColor, 66.5) !important;
+	}
+	
+	> li {
+		margin: 2px 6px 0px;
+		padding: .1em 1em .32em;
+		color: @eqdkpButtonFontColor;
+		vertical-align: baseline;
+		font: 14px/100% Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		border: 1px solid #00930E;
+		background: linear-gradient(to top, @eqdkpButtonBackgroundColor, @eqdkpButtonBorderColor) @eqdkpButtonBackgroundColor;
+		outline: none;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		border-radius: .1em;
+		box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	}
+	> li a {
+		padding: 0.25em 0.5em;
+		color: @eqdkpButtonFontColor;
+	}
+	> li:hover a {
+		color: @eqdkpButtonFontColorHover;
+	}
+	
+	.sf-with-ul:after { border-top-color: @eqdkpButtonFontColor !important; }
+	.sf-with-ul:hover:after { border-top-color: @eqdkpButtonFontColorHover !important; }
 }
 
 
