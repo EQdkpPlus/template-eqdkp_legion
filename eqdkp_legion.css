@@ -27,8 +27,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video,
 table.table, .table caption, .table tbody, .table tfoot, .table thead, .table tr, .table th, .table td {
@@ -40,7 +40,7 @@ table.table, .table caption, .table tbody, .table tfoot, .table thead, .table tr
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
@@ -317,7 +317,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 
 .fixed_width.frontend table.scrollable-x {
-	table-layout: fixed;	
+	table-layout: fixed;
 }
 
 .fixed_width.frontend table.scrollable-x tbody {
@@ -1028,7 +1028,7 @@ select[readonly], textarea[readonly], input[type="text"][readonly], input[type="
 }
 
 .tr { display: table-row; }
-.td { 
+.td {
 	display: table-cell;
 	padding: 2px;
 }
@@ -1079,7 +1079,7 @@ select[readonly], textarea[readonly], input[type="text"][readonly], input[type="
 	position:relative;
 	margin:0;
 	padding:1px;
-}			
+}
 .markImageResized{
 	width:32px;
 	height:32px;
@@ -1455,9 +1455,9 @@ hr#system-readmore {
 }
 
 
-/* Breamcrumb
+/* Breadcrumb
 ****************************************/
-ul.breamcrumb {
+ul.breadcrumb {
 	color: #AAA;
 	border: 1px solid rgba(19, 255, 41, 0.2);
 	border-top-left-radius: 15px 35px;
@@ -1466,11 +1466,11 @@ ul.breamcrumb {
 	width: 100%;
 }
 
-ul.breamcrumb li {
+ul.breadcrumb li {
 	float: left;
 }
 
-ul.breamcrumb a {
+ul.breadcrumb a {
 	float: left;
 	position: relative;
 	padding: 2px 1em 0;
@@ -1481,25 +1481,25 @@ ul.breamcrumb a {
 	text-decoration: none;
 }
 
-ul.breamcrumb li:first-child a {
+ul.breadcrumb li:first-child a {
 	width: 16px;
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto" transparent;
 }
-ul.breamcrumb li:first-child a:hover {
+ul.breadcrumb li:first-child a:hover {
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto",
 				radial-gradient(rgb(0, 219, 255) 10%, rgba(0, 219, 255, 0.3) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
-ul.breamcrumb li:first-child a i { display: none; }
+ul.breadcrumb li:first-child a i { display: none; }
 
-ul.breamcrumb li:last-child a::after { display: none; }
+ul.breadcrumb li:last-child a::after { display: none; }
 
-ul.breamcrumb a:hover {
+ul.breadcrumb a:hover {
 	color: #13FF29;
 	text-shadow: 0px 0px 2px #000;
 	background: radial-gradient(#00930E 10%, rgba(19, 255, 41, 0.29) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
 
-ul.breamcrumb a::after {
+ul.breadcrumb a::after {
 	content: '\f101';
 	position: absolute;
 	   right: -2px;
@@ -1511,18 +1511,18 @@ ul.breamcrumb a::after {
 	z-index: 2;
 }
 
-ul.breamcrumb a:hover::after{
+ul.breadcrumb a:hover::after{
 	color: #00930E;
 }
 
-ul.breamcrumb .current,
-ul.breamcrumb .current:hover{
+ul.breadcrumb .current,
+ul.breadcrumb .current:hover{
 	font-weight: bold;
 	background: none;
 }
 
-ul.breamcrumb .current::after,
-ul.breamcrumb .current::before{
+ul.breadcrumb .current::after,
+ul.breadcrumb .current::before{
 	content: normal;
 }
 
@@ -2088,13 +2088,13 @@ ul.portal_block {
 	min-height: 20px;
 }
 
-.portal_block li { 
+.portal_block li {
 	list-style-type: none;
 	padding: 10px;
 	margin:10px;
 	cursor:move;
 }
-.portal_block_light { 
+.portal_block_light {
 	list-style-type: none;
 	padding: 5px;
 	margin:10px;
@@ -2473,7 +2473,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	font-weight: bold;
 }
 
-table.guesttable { 
+table.guesttable {
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -3397,7 +3397,7 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 	color:#fff;
 	text-decoration:none;
 	-moz-border-radius-bottomright:4px;
-	-webkit-border-bottom-right-radius:4px;	
+	-webkit-border-bottom-right-radius:4px;
 	border-bottom-right-radius:4px;
 	-moz-border-radius-topright:4px;
 	-webkit-border-top-right-radius:4px;
@@ -3484,7 +3484,7 @@ ul.image-gallery {
 	li.image a {
 		position: relative;
 	}
-	li.image a:before, 
+	li.image a:before,
 	li.image a:after {
 		content: '';
 		display: block;
@@ -3760,7 +3760,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		height: auto !important;
 	}
 		
-	.responsive .mce-toolbar[role="menubar"] { 
+	.responsive .mce-toolbar[role="menubar"] {
 		display: none;
 	}
 	
@@ -3789,30 +3789,30 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin: 0;
 	}
 	
-	.responsive .breamcrumb li, .responsive .breamcrumb li a:after, .responsive .breamcrumb li a:before {
+	.responsive .breadcrumb li, .responsive .breadcrumb li a:after, .responsive .breadcrumb li a:before {
 		display: none;
 	}
 	
-	.responsive .breamcrumb li:first-child, .responsive .breamcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child, .responsive .breadcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 	
-	.responsive .breamcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a {
 		border-right: 1px solid rgba(255, 0, 0, 0.2);
 		padding-right: 15px;
 		line-height: 27px;
 		padding-left: 8px !important;
 	}
 	
-	.responsive .breamcrumb li {
+	.responsive .breadcrumb li {
 		font-size: 14px;
 	}
 	
-	.responsive .breamcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 	
-	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3825,7 +3825,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 	
-	.responsive .breamcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before {
 		display: none;
 	}
 	
@@ -3936,7 +3936,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 	
 	.responsive table.scrollable-x {
-		table-layout: fixed;	
+		table-layout: fixed;
 	}
 
 	.responsive table.scrollable-x tbody {
@@ -3974,7 +3974,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-right: 0;
 	}
 	
-	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{ 
+	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{
 		display: none;
 	}
 	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
@@ -4149,7 +4149,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	background-position: 10px center;
 	margin: 10px 0px;
 	display:block;
-	min-height: 32px;	
+	min-height: 32px;
 }
 .errorbox div span, .greenbox div span, .bluebox div span{
 	padding: 0px 0px 0px 0px;
@@ -4424,7 +4424,7 @@ button.thirdpartylogin.openid {
 }
 .ribbon span {
   	position: relative;
-	display: block;	
+	display: block;
 	text-align: center;
 	bottom: 0em;
 	left: 0;

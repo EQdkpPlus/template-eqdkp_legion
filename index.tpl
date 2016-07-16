@@ -38,7 +38,7 @@
 			
 				--- .breadcrumb-container ---
 			0px - ({T_PORTAL_WIDTH} - {T_COLUMN_LEFT_WIDTH} - {T_COLUMN_RIGHT_WIDTH})
-				--- ul.breamcrumb ---
+				--- ul.breadcrumb ---
 			100% + {T_PORTAL_WIDTH_WITHOUT_LEFT_COLUMN}
 			*/
 			
