@@ -27,8 +27,8 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video,
 table.table, .table caption, .table tbody, .table tfoot, .table thead, .table tr, .table th, .table td {
@@ -40,7 +40,7 @@ table.table, .table caption, .table tbody, .table tfoot, .table thead, .table tr
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section { display: block; }
 body { line-height: 1; }
 ol, ul { list-style: none; }
@@ -317,7 +317,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 }
 
 .fixed_width.frontend table.scrollable-x {
-	table-layout: fixed;	
+	table-layout: fixed;
 }
 
 .fixed_width.frontend table.scrollable-x tbody {
@@ -1028,7 +1028,7 @@ select[readonly], textarea[readonly], input[type="text"][readonly], input[type="
 }
 
 .tr { display: table-row; }
-.td { 
+.td {
 	display: table-cell;
 	padding: 2px;
 }
@@ -1079,7 +1079,7 @@ select[readonly], textarea[readonly], input[type="text"][readonly], input[type="
 	position:relative;
 	margin:0;
 	padding:1px;
-}			
+}
 .markImageResized{
 	width:32px;
 	height:32px;
@@ -2088,13 +2088,13 @@ ul.portal_block {
 	min-height: 20px;
 }
 
-.portal_block li { 
+.portal_block li {
 	list-style-type: none;
 	padding: 10px;
 	margin:10px;
 	cursor:move;
 }
-.portal_block_light { 
+.portal_block_light {
 	list-style-type: none;
 	padding: 5px;
 	margin:10px;
@@ -2473,7 +2473,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	font-weight: bold;
 }
 
-table.guesttable { 
+table.guesttable {
 	margin-bottom: 5px;
 	padding: 5px;
 }
@@ -2630,6 +2630,11 @@ span.group_selector {
 		border: none;
 		background: transparent;
 		
+		div.td:first-child {
+			height: 24px;
+			width: 49px;
+			box-sizing: border-box;
+		}
 		input[type="checkbox"] {
 			cursor: pointer;
 			opacity: 0.2;
@@ -2658,10 +2663,14 @@ span.group_selector {
 		
 		.attendee_box > .class_@{key} {
 			background: url('@{eqdkpTemplateImagePath}/@{eqdkpGame}_classes/@{key}.png') no-repeat scroll ~"12% 0% / 25px auto" transparent;
-			//background-size: 32px;
 			border: 1px solid fade(@color, 50);
 			box-shadow: 0px 0px 6px 6px fade(@color, 30) inset;
 		}
+		
+		//workaround for chrome
+		body.chrome .attendee_box > .class_@{key},
+		body.webkit .attendee_box > .class_@{key} { display: inline-table; width: 100%; }
+		
 		
 		.change_attande_box(@i+1);
 	}
@@ -3397,7 +3406,7 @@ table.leaderboard tbody tr td table.borderless tbody tr td {
 	color:#fff;
 	text-decoration:none;
 	-moz-border-radius-bottomright:4px;
-	-webkit-border-bottom-right-radius:4px;	
+	-webkit-border-bottom-right-radius:4px;
 	border-bottom-right-radius:4px;
 	-moz-border-radius-topright:4px;
 	-webkit-border-top-right-radius:4px;
@@ -3484,7 +3493,7 @@ ul.image-gallery {
 	li.image a {
 		position: relative;
 	}
-	li.image a:before, 
+	li.image a:before,
 	li.image a:after {
 		content: '';
 		display: block;
@@ -3760,7 +3769,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		height: auto !important;
 	}
 		
-	.responsive .mce-toolbar[role="menubar"] { 
+	.responsive .mce-toolbar[role="menubar"] {
 		display: none;
 	}
 	
@@ -3936,7 +3945,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 	
 	.responsive table.scrollable-x {
-		table-layout: fixed;	
+		table-layout: fixed;
 	}
 
 	.responsive table.scrollable-x tbody {
@@ -3974,7 +3983,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		margin-right: 0;
 	}
 	
-	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{ 
+	.responsive .comment_avatar_container, .responsive .comment_write_container::after, .responsive .comment_write_container::before, .comment_container::after, .comment_container::before{
 		display: none;
 	}
 	.responsive .comment_container, .responsive #comment_button, .responsive .reply-trigger, .responsive .reply_button, .responsive .comment_write_container {
@@ -4149,7 +4158,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	background-position: 10px center;
 	margin: 10px 0px;
 	display:block;
-	min-height: 32px;	
+	min-height: 32px;
 }
 .errorbox div span, .greenbox div span, .bluebox div span{
 	padding: 0px 0px 0px 0px;
@@ -4424,7 +4433,7 @@ button.thirdpartylogin.openid {
 }
 .ribbon span {
   	position: relative;
-	display: block;	
+	display: block;
 	text-align: center;
 	bottom: 0em;
 	left: 0;
