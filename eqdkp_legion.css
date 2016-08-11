@@ -1457,7 +1457,8 @@ hr#system-readmore {
 
 /* Breadcrumb
 ****************************************/
-ul.breadcrumb {
+ul.breadcrumb,
+ul.breamcrumb {
 	color: #AAA;
 	border: 1px solid rgba(19, 255, 41, 0.2);
 	border-top-left-radius: 15px 35px;
@@ -1466,11 +1467,13 @@ ul.breadcrumb {
 	width: 100%;
 }
 
-ul.breadcrumb li {
+ul.breadcrumb li,
+ul.breamcrumb li {
 	float: left;
 }
 
-ul.breadcrumb a {
+ul.breadcrumb a,
+ul.breamcrumb a {
 	float: left;
 	position: relative;
 	padding: 2px 1em 0;
@@ -1481,25 +1484,31 @@ ul.breadcrumb a {
 	text-decoration: none;
 }
 
-ul.breadcrumb li:first-child a {
+ul.breadcrumb li:first-child a,
+ul.breamcrumb li:first-child a {
 	width: 16px;
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto" transparent;
 }
-ul.breadcrumb li:first-child a:hover {
+ul.breadcrumb li:first-child a:hover,
+ul.breamcrumb li:first-child a:hover {
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto",
 				radial-gradient(rgb(0, 219, 255) 10%, rgba(0, 219, 255, 0.3) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
-ul.breadcrumb li:first-child a i { display: none; }
+ul.breadcrumb li:first-child a i,
+ul.breamcrumb li:first-child a i { display: none; }
 
-ul.breadcrumb li:last-child a::after { display: none; }
+ul.breadcrumb li:last-child a::after,
+ul.breamcrumb li:last-child a::after { display: none; }
 
-ul.breadcrumb a:hover {
+ul.breadcrumb a:hover,
+ul.breamcrumb a:hover {
 	color: #13FF29;
 	text-shadow: 0px 0px 2px #000;
 	background: radial-gradient(#00930E 10%, rgba(19, 255, 41, 0.29) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
 
-ul.breadcrumb a::after {
+ul.breadcrumb a::after,
+ul.breamcrumb a::after {
 	content: '\f101';
 	position: absolute;
 	   right: -2px;
@@ -1511,27 +1520,32 @@ ul.breadcrumb a::after {
 	z-index: 2;
 }
 
-ul.breadcrumb a:hover::after{
+ul.breadcrumb a:hover::after,
+ul.breamcrumb a:hover::after {
 	color: #00930E;
 }
 
 ul.breadcrumb .current,
-ul.breadcrumb .current:hover{
+ul.breamcrumb .current,
+ul.breadcrumb .current:hover,
+ul.breamcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
 ul.breadcrumb .current::after,
-ul.breadcrumb .current::before{
+ul.breamcrumb .current::after,
+ul.breadcrumb .current::before,
+ul.breamcrumb .current::before {
 	content: normal;
 }
 
-.breadcrumb-container {
+.breadcrumb-container,
+.breamcrumb-container {
 	margin: 0px 68px;
 	position: absolute;
 		 top: -36px;
 }
-//.breadcrumb-container + * { margin-top: -21px; } /* fix for breadcrumb position */
 
 
 /* Articelcategorie childs
@@ -3785,34 +3799,47 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 	
-	.responsive .breadcrumb-container {
+	.responsive .breadcrumb-container,
+	.responsive .breamcrumb-container {
 		margin: 0;
 	}
 	
-	.responsive .breadcrumb li, .responsive .breadcrumb li a:after, .responsive .breadcrumb li a:before {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li,
+	.responsive .breadcrumb li a:after,
+	.responsive .breamcrumb li a:after,
+	.responsive .breadcrumb li a:before,
+	.responsive .breamcrumb li a:before {
 		display: none;
 	}
 	
-	.responsive .breadcrumb li:first-child, .responsive .breadcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:first-child,
+	.responsive .breamcrumb li:first-child,
+	.responsive .breadcrumb li:nth-last-of-type(2),
+	.responsive .breamcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 	
-	.responsive .breadcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a,
+	.responsive .breamcrumb li:first-child a {
 		border-right: 1px solid rgba(255, 0, 0, 0.2);
 		padding-right: 15px;
 		line-height: 27px;
 		padding-left: 8px !important;
 	}
 	
-	.responsive .breadcrumb li {
+	.responsive .breadcrumb li,
+	.responsive .breamcrumb li {
 		font-size: 14px;
 	}
 	
-	.responsive .breadcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a,
+	.responsive .breamcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 	
-	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
+	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3825,7 +3852,8 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 	
-	.responsive .breadcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before,
+	.responsive .breamcrumb li:first-child a:before {
 		display: none;
 	}
 	
