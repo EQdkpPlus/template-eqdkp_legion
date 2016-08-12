@@ -38,7 +38,7 @@
 			
 				--- .breadcrumb-container ---
 			0px - ({T_PORTAL_WIDTH} - {T_COLUMN_LEFT_WIDTH} - {T_COLUMN_RIGHT_WIDTH})
-				--- ul.breamcrumb ---
+				--- ul.breadcrumb ---
 			100% + {T_PORTAL_WIDTH_WITHOUT_LEFT_COLUMN}
 			*/
 			
@@ -46,14 +46,14 @@
 			@media all and (min-width: 900px) {
 				<!-- IF S_PORTAL_LEFT -->
 					<!-- IF T_COLUMN_LEFT_WIDTH > 0 -->
-					.breadcrumb-container { left: -{T_COLUMN_LEFT_WIDTH}; }
+					.breadcrumb-container, .breamcrumb-container { left: -{T_COLUMN_LEFT_WIDTH}; }
 					<!-- ELSE -->
-					.breadcrumb-container { left: -210px; }
+					.breadcrumb-container, .breamcrumb-container { left: -210px; }
 					<!-- ENDIF -->
 				<!-- ENDIF -->
 				
 				<!-- IF S_PORTAL_LEFT or S_PORTAL_RIGHT -->
-				.breadcrumb-container {
+				.breadcrumb-container, .breamcrumb-container {
 					width: calc(100%
 						<!-- IF S_PORTAL_LEFT -->
 							<!-- IF T_COLUMN_LEFT_WIDTH > 0 -->
@@ -75,7 +75,7 @@
 				<!-- ENDIF -->
 			}
 			<!-- ELSE -->
-			.breadcrumb-container { position: relative; }
+			.breadcrumb-container, .breamcrumb-container { position: relative; }
 			<!-- ENDIF -->
 		</style>
 		
@@ -196,7 +196,7 @@
 									<span class="notification-tooltip-trigger bubble-yellow notification-bubble-yellow hand" <!-- IF NOTIFICATION_COUNT_YELLOW == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_YELLOW}</span>
 									<span class="notification-tooltip-trigger bubble-green notification-bubble-green hand" <!-- IF NOTIFICATION_COUNT_GREEN == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_GREEN}</span>
 									<ul class="dropdown-menu notification-tooltip" role="menu" id="notification-tooltip-all">
-										<li class="notification-action-bar"> 
+										<li class="notification-action-bar">
 											<div class="floatLeft">
 												<span class="bubble-red notification-bubble-red notification-filter hand" <!-- IF NOTIFICATION_COUNT_RED == 0 -->style="display:none;"<!-- ENDIF --> >{NOTIFICATION_COUNT_RED}</span>
 												<span class="bubble-yellow notification-bubble-yellow notification-filter hand" <!-- IF NOTIFICATION_COUNT_YELLOW == 0 -->style="display:none;"<!-- ENDIF -->>{NOTIFICATION_COUNT_YELLOW}</span>
