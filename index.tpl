@@ -16,8 +16,8 @@
 		<title>{PAGE_TITLE}</title>
 		{CSS_FILES}
 		{JS_FILES}
-		<link rel="shortcut icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
-		<link rel="icon" href="{TEMPLATE_PATH}/images/favicon.png" type="image/png" />
+		<link rel="shortcut icon" href="{FAVICON}" type="{FAVICON_TYPE}" />
+		<link rel="icon" href="{FAVICON}" type="{FAVICON_TYPE}" />
 		<link rel="apple-touch-icon" href="{TEMPLATE_PATH}/images/apple-touch-icon.png" />
 		{RSS_FEEDS}
 		<!-- LISTENER head -->
@@ -28,7 +28,6 @@
 				background:#000000 url('{TEMPLATE_BACKGROUND}') no-repeat center top;
 				background-attachment: {T_BACKGROUND_POSITION};
 			}
-			#wrapper header { background: none !important; }
 			<!-- ENDIF -->
 			
 			/*
@@ -85,20 +84,20 @@
 			
 			<!-- IF S_NORMAL_HEADER and T_BACKGROUND_TYPE == 0 and T_BACKGROUND_POSITION == 'scroll' and not S_IN_ADMIN -->
 			// Background Video -- To disable, set the Background position to fixed in ACP: Style Management
-			$(document).ready(function() {
-				if($(window).width() >= 1200) {
+			$(function(){
+				if($(window).width() >= 1200){
 					var html_bg_video  = '<video preload="auto" autoplay="true" loop="loop">';
 						html_bg_video += '	<source src="{TEMPLATE_PATH}/videos/key-render.mp4" type="video/mp4">';
 						html_bg_video += '	<source src="{TEMPLATE_PATH}/videos/key-render.webm" type="video/webm">';
 						html_bg_video += '</video>';
 					
 					$('#bg-video-wrapper').html(html_bg_video);
-					$('#bg-video-wrapper video').on('canplaythrough', function() {
+					$('#bg-video-wrapper video').on('canplaythrough', function(){
 						if ($(this).css("opacity") != 1) {
 							$(this).delay(100).fadeTo(4000, 1);
 						}
 					});
-				} else {
+				}else{
 					$('#bg-video-wrapper').hide();
 				}
 			});
@@ -165,7 +164,22 @@
 									</ul>
 								</div>
 							</li>
-							<!-- IF S_ADMIN --><li><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> <span class="hiddenSmartphone">{L_menu_admin_panel}</span></a></li><!-- ENDIF -->
+							<!-- IF S_ADMIN -->
+							<li>
+								<div class="admin-tooltip-container">
+									<a href="{EQDKP_ROOT_PATH}admin/{SID}" class="admin-tooltip-trigger tooltip-trigger" data-tooltip="admin-tooltip"><i class="fa fa-cog fa-lg"></i> <span class="hiddenSmartphone">{L_menu_admin_panel}</span></a>
+									<ul class="dropdown-menu admin-tooltip" role="menu" id="admin-tooltip">
+										<li><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a></li>
+										<li class="tooltip-divider"></li>
+										<div class="nav-header floatLeft">{L_favorits}</div>
+										<div class="nav-header floatRight hand" title="{L_settings}"><i class="fa fa-cog fa-lg" onclick="window.location='{EQDKP_ROOT_PATH}admin/manage_menus.php{SID}&tab=1'"></i></div>
+										<!-- BEGIN admin_tooltip -->
+										<li><a href="{EQDKP_ROOT_PATH}{admin_tooltip.LINK}"><i class="fa {admin_tooltip.ICON} fa-lg"></i> {admin_tooltip.TEXT}</a></li>
+										<!-- END admin_tooltip -->
+									</ul>
+								</div>
+							</li>
+							<!-- ENDIF -->
 							
 							<!-- IF U_CHARACTERS != "" --><li><a href="{U_CHARACTERS}"><i class="fa fa-group fa-lg"></i> <span class="hiddenSmartphone">{L_menu_members}</span></a></li><!-- ENDIF -->
 							
@@ -489,7 +503,7 @@
 		//<![CDATA[
 		
 		<!-- IF not S_LOGGED_IN -->
-		$(document).ready(function() {
+		$(function(){
 			/* Login Dialog */
 			$( "#dialog-login" ).dialog({
 				height: <!-- IF S_BRIDGE_INFO -->450<!-- ELSE -->350<!-- ENDIF -->,
@@ -550,7 +564,7 @@
 		var user_clock_format = "dddd, "+mmocms_user_dateformat_long+" "+ mmocms_user_timeformat;
 		var mymoment = moment(mmocms_user_timestamp_atom).utcOffset(mmocms_user_timezone);
 			
-		$(document).ready(function() {
+		$(function() {
 			$('.notification-mark-all-read').on('click', function() {
 				$('.notification-content ul').html({L_notification_none|jsencode});
 				$('.notification-bubble-red, .notification-bubble-yellow, .notification-bubble-green').hide();
@@ -569,8 +583,8 @@
 		{JS_CODE_EOP}
 		
 		//Reset Favicon, for Bookmarks
-		$(window).on('unload', function() {
-            if (typeof favicon !== 'undefined'){ favicon.reset(); }
+		$(window).on('unload', function(){
+            if(typeof favicon !== 'undefined'){ favicon.reset(); }
    		});
 		//]]>
 	</script>

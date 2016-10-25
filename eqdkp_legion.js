@@ -18,7 +18,7 @@
  *	along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-$(document).ready(function(){
+$(function(){
 	if(mmocms_header_type == 'full'){
 		/* My Chars Points */
 		$('.mychars-points-tooltip .char').on('click', function(){
@@ -28,9 +28,9 @@ $(document).ready(function(){
 			var icons = $(this).parent().find('.icons').html();
 			$(".mychars-points-target").html(icons + " "+current);
 			var id = $(this).parent().attr('id');
-			if(test_localstorage()) localStorage.setItem('mcp_'+mmocms_userid, id);
+			if(JQisLocalStorageNameSupported()) localStorage.setItem('mcp_'+mmocms_userid, id);
 		});
-		var saved = (test_localstorage()) ? localStorage.getItem('mcp_'+mmocms_userid) : "";
+		var saved = (JQisLocalStorageNameSupported()) ? localStorage.getItem('mcp_'+mmocms_userid) : "";
 		
 		if (saved && saved != "" && $('#'+saved).find('.current').html() != undefined){
 			$('#'+saved).addClass("active");
@@ -46,12 +46,6 @@ $(document).ready(function(){
 		
 		/* Main Menu */
 		$('ul.mainmenu li.link_li_indexphp a.link_indexphp, ul.mainmenu li.link_li_entry_home a.link_entry_home').html('');
-		$('ul.mainmenu').addClass('sf-menu');
-		jQuery('ul.mainmenu').superfish({
-				delay:		400,
-				animation:	{opacity:'show',height:'show'},
-				speed:		'fast'
-		});
 		
 		/* Tooltip Triggers */
 		$('.tooltip-trigger').on('click', function(event){
@@ -70,6 +64,12 @@ $(document).ready(function(){
 		$('.user-tooltip-trigger').on('dblclick', function(event){
 			$("#user-tooltip").hide('fast');
 			window.location=mmocms_controller_path+"Settings"+mmocms_seo_extension+mmocms_sid;
+		});
+		
+		/* Admin Tooltip Doubleclick */
+		$('.admin-tooltip-trigger').on('dblclick', function(event){
+			$("#admin-tooltip").hide('fast');
+			window.location=mmocms_root_path+"admin"+mmocms_sid;
 		});
 		
 		user_clock();
@@ -123,12 +123,12 @@ $(document).ready(function(){
 			}
 		});
 		//Periodic Update of Notifications
-		window.setTimeout("notification_update()", 1000*60*5);
+		window.setTimeout("notification_update()", 300000);
 	}
 })
 
 /* User clock */
-function user_clock(){	
+function user_clock(){
 	var mydate = mymoment.format(user_clock_format);
 	$('.user_time').html(mydate);
 	mymoment.add(1, 's');
@@ -169,20 +169,12 @@ function notification_show_only(name){
 	}
 }
 
-function notification_update(){			
+function notification_update(){
 	$.get(mmocms_controller_path+"Notifications"+mmocms_seo_extension+mmocms_sid+"&load", function(data){
 		$('.notification-content ul').html(data);
 		recalculate_notification_bubbles();
 	});
 		
 	//5 Minute
-	window.setTimeout("notification_update()", 1000*60*5);
-}
-
-function test_localstorage(){
-	try {
-		return ('localStorage' in window) && window[localstorage] !== null;
-	} catch(e) {
-		return false;
-	}
+	window.setTimeout("notification_update()", 300000);
 }

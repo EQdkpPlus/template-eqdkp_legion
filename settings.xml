@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings styleversion="0.2.0">	
+<settings styleversion="0.2.0">
 	<template_path>eqdkp_legion</template_path>
 	<attendees_columns>6</attendees_columns>
 	<logo_position>left</logo_position>
+	<favicon_img></favicon_img>
+	<banner_img></banner_img>
 	<background_type>0</background_type>
 	<background_img></background_img>
 	<background_pos>normal</background_pos>
