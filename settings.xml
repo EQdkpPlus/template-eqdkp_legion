@@ -80,5 +80,8 @@
 	<misc_text1></misc_text1>
 	<misc_text2></misc_text2>
 	<misc_text3></misc_text3>
-	<additional_less></additional_less>
+	<additional_less>
+@styleCalendarStateColor : false;
+@styleCalenderGameStyle : true;
+	</additional_less>
 </settings>
