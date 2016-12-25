@@ -296,20 +296,25 @@
 							<div class="clear noheight">&nbsp;</div>
 						</div>
 						<div class="hiddenDesktop nav-mobile">
-							<i class="fa fa-list hand" onclick="$('.nav-mobile-overlay').toggle();"></i>
-							<div class="nav-mobile-overlay">
-								<div class="nav-mobile-closebtn" onclick="$('.nav-mobile-overlay').toggle();">
-									<i class="fa fa-lg fa-times hand"></i>
-								</div>
-							{MAIN_MENU_MOBILE}
-							<!-- IF S_IN_ADMIN -->
-							<div class="admin-headline"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</div>
-							{ADMIN_MENU_MOBILE}
-							<!-- ELSE -->
-								<!-- IF S_ADMIN --><div class="admin-headline"><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a></div><!-- ENDIF -->
-							<!-- ENDIF -->
+						<i class="fa fa-list hand" onclick="$('.nav-mobile .mobile-overlay').toggle();"></i>
+						<div class="mobile-overlay">
+							<div class="overlay-header">
+								<a class="title" href="{EQDKP_CONTROLLER_PATH}{SID}">
+									<!-- IF HEADER_LOGO --><img src="{HEADER_LOGO}" alt="{MAIN_TITLE}" /><!-- ELSE -->{MAIN_TITLE}<!-- ENDIF -->
+								</a>
+								<div class="close" onclick="$('.nav-mobile .mobile-overlay').toggle();"><i class="fa fa-times"></i></div>
+							</div>
+							<div class="overlay-content">
+								<nav class="mainmenu-mobile-wrapper"><div class="heading">{L_menu_eqdkp}</div>{MAIN_MENU_MOBILE}</nav>
+								<!-- IF S_IN_ADMIN -->
+								<nav class="adminmenu-mobile-wrapper"><div class="heading">{L_menu_admin_panel}</div>{ADMIN_MENU_MOBILE}</nav>
+								<!-- ENDIF -->
+							</div>
+							<div class="overlay-footer">
+								<!-- IF S_ADMIN and not S_IN_ADMIN --><a href="{EQDKP_ROOT_PATH}admin/{SID}"><i class="fa fa-cog fa-lg"></i> {L_menu_admin_panel}</a><!-- ENDIF -->
 							</div>
 						</div>
+					</div>
 						<!-- LISTENER mainmenu -->
 					</div><!-- close mainmenu -->
 					
@@ -465,7 +470,6 @@
 					<dd>
 						<div class="input-icon">
 							<i class="fa fa-user"></i><input type="text" name="username" size="30" maxlength="30" class="input username" id="username" placeholder="{L_username}" required />
-							<div class="fv_msg" data-errormessage="{L_fv_required_user}"></div>
 						</div>
 						
 					</dd>
@@ -476,7 +480,6 @@
 						<div class="input-icon">
 							<i class="fa fa-key"></i>
 							<input type="password" name="password" pattern=".{3,}" size="30" maxlength="32" class="input password" id="password" placeholder="{L_password}" required />
-							<div class="fv_msg" data-errormessage="{L_fv_required_password_pattern}"></div>
 						</div>
 						<!-- IF S_SHOW_PWRESET_LINK -->
 						<br />{U_PWRESET_LINK}<br />
