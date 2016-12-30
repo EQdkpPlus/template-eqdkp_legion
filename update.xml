@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <update>
-	<styleupdate styleversion="0.0.0">
+	<styleupdate styleversion="0.3.0">
 		<delete>jquery_tmpl.css</delete>
+		<delete>images/ui-icons_000000_256x240.png</delete>
 	</styleupdate>
 </update>
