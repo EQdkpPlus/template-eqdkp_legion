@@ -2400,7 +2400,7 @@ fieldset.raidcal_infos dt, fieldset.moderation_panel dt {
 	.attendee_select input	{ opacity:.2; transition:opacity 1s ease; }
 	.attendee_select input:checked	{ opacity:.7; }
 	.attendee_name			{ flex:2 1 100%; color: @eqdkpBodyFontColor; overflow:hidden; text-overflow:ellipsis; }
-	.attendee_name a		{ color:@eqdkpBodyFontColor; text-shadow:none; overflow:hidden; text-overflow:ellipsis; vertical-align:middle; }
+	.attendee_name a		{ color:inherit; text-shadow:none; overflow:hidden; text-overflow:ellipsis; vertical-align:middle; }
 	.attendee_info			{ flex:1 0 auto; color:fade(@eqdkpBodyFontColor, 40); padding-right:3px; }
 	.attendee_info:hover	{ color:fade(@eqdkpBodyFontColor, 70); }
 	.attendee_info i		{ line-height: initial; }

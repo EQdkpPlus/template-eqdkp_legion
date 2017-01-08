@@ -8,6 +8,7 @@
 	<background_type>0</background_type>
 	<background_img></background_img>
 	<background_pos>normal</background_pos>
+	<editor_theme>tundora</editor_theme>
 	<column_right_width>0px</column_right_width>
 	<column_left_width>0px</column_left_width>
 	<portal_width>0px</portal_width>
