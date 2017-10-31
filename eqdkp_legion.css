@@ -88,7 +88,7 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	position: absolute;
 		 top: 0;
 	   right: 0;
-	  bottom: 0;
+	  //bottom: 0;
 		left: 0;
 	overflow: hidden;
 	z-index: -100;
@@ -554,21 +554,23 @@ h3 { font-size: 14px; margin-bottom: 5px; border-bottom: none; }
 	list-style:none;
 	display:block;
 	
-	li{
+	li {
 		padding-top: 5px;
 		padding-bottom: 5px;
-		border-bottom: 1px solid #DDDDDD;
+		border-bottom: 1px solid #666;
 	}
-	li a{
+	li a {
 		display:block;
+		text-shadow:none;
 	}
-	li a:before{
+	li a:before {
 		content:"\f054";
 		font-family: FontAwesome;
 		margin-right: 5px;
-		color: #000;
+		color: darken(saturate(@eqdkpBodyLinkColor, 25), 20);
 		font-size: 10px;
 	}
+	li a:hover:before { color:inherit; }
 }
 
 /*
@@ -1912,7 +1914,6 @@ ul.breamcrumb .current::before {
 }
 .featured {
 	display: inline-block;
-	cursor: pointer;
 	margin-right: 5px;
 }
 .featured:before {
@@ -3763,7 +3764,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.nav-mobile {
 		width: 100%;
 		min-height: 3em;
-		background: url('@{eqdkpTemplateImagePath}bg-nav-bar-mid.png') no-repeat scroll ~"center -32px / 100% 108px" #333;
+		background: url('@{eqdkpTemplateImagePath}bg-nav-bar-mid.png') no-repeat scroll ~"center -32px / 100% 108px" #999;
 	}
 	
 	.nav-mobile a {
@@ -3773,7 +3774,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	.nav-mobile > i {
 		margin: 4px;
 		padding: 2px 10px 2px;
-		color: #FF7E00;
+		color: @eqdkpMenuFontColor;
 		font-size: 26px;
 	}
 	
@@ -4404,52 +4405,64 @@ button.thirdpartylogin.discord {
 
 
 /* Boolean Boxes */
-@styleBooleanRed: #e89795;
-@styleBooleanGreen: #89bf8b;
+.radioContainerBoolean { padding-left:4px; }
+label.isBoolean { margin:0px !important; }
+label.isBoolean > input { display:none; }
 
-label.isBoolean > input {
-        display: none;
-}
-label.isBoolean {
-        margin: 0px !important;
-}
-label.isBoolean > .red, label.isBoolean > .green {
-        color: @eqdkpInputFontColor;
-        font-size: 13px;
-        line-height: 20px;
-        padding: 4px 6px;
-        vertical-align: middle;
-        background: @eqdkpInputBackgroundColor;
-        border: 1px solid @eqdkpInputBorderColor;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-        font-family: Tahoma,Arial,Verdana,sans-serif;
-        margin: 0px;
-}
-
-label.isBoolean > .red {
-        border-radius: 4px 0px 0px 4px;
-}
-
+label.isBoolean > .red,
 label.isBoolean > .green {
-        border-radius: 0px 4px 4px 0px;
-        margin-left: -5px !important;
+    color: #000;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    background: #333;
+    border: 1px solid #666;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    font-family: Tahoma,Arial,Verdana,sans-serif;
+    margin: 0px;
+}
+label.isBoolean > .green { margin-left: -5px !important; }
+
+label.isBoolean > input[type="radio"]:checked + span.red,
+label.isBoolean > span.red:hover,
+label.isBoolean > span.red:active,
+label.isBoolean > input[type="radio"]:checked + span.green,
+label.isBoolean > span.green:hover,
+label.isBoolean > span.green:active {
+    background-color: #d7d7d7;
+    box-shadow: 0.5px 1px 2px #000 inset;
 }
 
-label.isBoolean > input[type="radio"]:checked + span.red, label.isBoolean > span.red:hover, label.isBoolean > span.red:active, label.isBoolean > input[type="radio"]:checked + span.green, label.isBoolean > span.green:hover, label.isBoolean > span.green:active {
-        background-color: #d7d7d7;
-        box-shadow: 0.5px 1px 2px #000 inset;
+label.isBoolean > input[type="radio"]:checked + span.red,
+label.isBoolean > span.red:hover,
+label.isBoolean > span.red:active {
+    background: #f05551 !important;
+    color: #000 !important;
 }
 
-label.isBoolean > input[type="radio"]:checked + span.red, label.isBoolean > span.red:hover, label.isBoolean > span.red:active {
-        background: @styleBooleanRed !important;
-        color: @eqdkpInputFontColor !important;
+label.isBoolean > input[type="radio"]:checked + span.green,
+label.isBoolean > span.green:hover,
+label.isBoolean > span.green:active {
+    background: #47e94d !important;
+    color: #000 !important;
 }
 
-label.isBoolean > input[type="radio"]:checked + span.green, label.isBoolean > span.green:hover, label.isBoolean > span.green:active {
-        background: @styleBooleanGreen !important;
-        color: @eqdkpInputFontColor !important;
+
+/* Iframe widget */
+body.module-iframe {
+	background: transparent;
+	margin: 0;
 }
-/* End Boolean Boxes */
+.module-iframe #contentBody, .module-iframe #contentBody2 {
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+.module-iframe #plus_debug_tabs {
+	display: none;
+}
 
 
 @keyframes opacity-pulse {
