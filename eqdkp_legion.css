@@ -878,8 +878,9 @@ ul.adminmenu ul.sub-menu li:hover > .sub-menu-arrow:after { border-left-color: l
 	display: none;
 	padding: 3px 0;
 	position: absolute;
-	top: -1.5px;
+	top: 50%;
 	left: 100%;
+	transform: translateY(-50%);
 	color: #aaa;
 	border: 1px solid rgba(102,102,102,.25);
 	background: url('@{eqdkpTemplateImagePath}steel.png') repeat scroll center center #131313;
@@ -1623,23 +1624,29 @@ hr#system-readmore {
 
 /* Breadcrumb
 ****************************************/
-ul.breadcrumb,
-ul.breamcrumb {
+#nav { position:relative; }
+.breadcrumb-container {
+	margin: 0 115px;
+	position: relative;
+	bottom: -10px;
+}
+.admin .breadcrumb-container { margin:0 24px; }
+.admin .breadcrumb { border-radius:0; }
+
+ul.breadcrumb {
 	color: #AAA;
 	border: 1px solid rgba(19, 255, 41, 0.2);
-	border-top-left-radius: 15px 35px;
-	border-top-right-radius: 15px 35px;
+	border-top-left-radius: 25px 35px;
+	border-top-right-radius: 25px 35px;
 	overflow: hidden;
 	width: 100%;
 }
 
-ul.breadcrumb li,
-ul.breamcrumb li {
+ul.breadcrumb li {
 	float: left;
 }
 
-ul.breadcrumb a,
-ul.breamcrumb a {
+ul.breadcrumb a {
 	float: left;
 	position: relative;
 	padding: 2px 1em 0;
@@ -1650,31 +1657,25 @@ ul.breamcrumb a {
 	text-decoration: none;
 }
 
-ul.breadcrumb li:first-child a,
-ul.breamcrumb li:first-child a {
+ul.breadcrumb li:first-child a {
 	width: 16px;
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto" transparent;
 }
-ul.breadcrumb li:first-child a:hover,
-ul.breamcrumb li:first-child a:hover {
+ul.breadcrumb li:first-child a:hover {
 	background: url('@{eqdkpTemplateImagePath}hearthstone.png') no-repeat scroll ~"1em 0em / 16px auto",
 				radial-gradient(rgb(0, 219, 255) 10%, rgba(0, 219, 255, 0.3) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
-ul.breadcrumb li:first-child a i,
-ul.breamcrumb li:first-child a i { display: none; }
+ul.breadcrumb li:first-child a i { display: none; }
 
-ul.breadcrumb li:last-child a::after,
-ul.breamcrumb li:last-child a::after { display: none; }
+ul.breadcrumb li:last-child a::after { display: none; }
 
-ul.breadcrumb a:hover,
-ul.breamcrumb a:hover {
+ul.breadcrumb a:hover {
 	color: #13FF29;
 	text-shadow: 0px 0px 2px #000;
 	background: radial-gradient(#00930E 10%, rgba(19, 255, 41, 0.29) 65%, transparent 100%) repeat scroll 0% 0% transparent;
 }
 
-ul.breadcrumb a::after,
-ul.breamcrumb a::after {
+ul.breadcrumb a::after {
 	content: '\f101';
 	position: absolute;
 	   right: -2px;
@@ -1686,31 +1687,19 @@ ul.breamcrumb a::after {
 	z-index: 2;
 }
 
-ul.breadcrumb a:hover::after,
-ul.breamcrumb a:hover::after {
+ul.breadcrumb a:hover::after {
 	color: #00930E;
 }
 
 ul.breadcrumb .current,
-ul.breamcrumb .current,
-ul.breadcrumb .current:hover,
-ul.breamcrumb .current:hover {
+ul.breadcrumb .current:hover {
 	font-weight: bold;
 	background: none;
 }
 
 ul.breadcrumb .current::after,
-ul.breamcrumb .current::after,
-ul.breadcrumb .current::before,
-ul.breamcrumb .current::before {
+ul.breadcrumb .current::before {
 	content: normal;
-}
-
-.breadcrumb-container,
-.breamcrumb-container {
-	margin: 0px 68px;
-	position: absolute;
-		 top: -36px;
 }
 
 
@@ -3667,47 +3656,37 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		float: none;
 	}
 	
-	.responsive .breadcrumb-container,
-	.responsive .breamcrumb-container {
+	.responsive .breadcrumb-container {
 		margin: 0;
 	}
 	
 	.responsive .breadcrumb li,
-	.responsive .breamcrumb li,
 	.responsive .breadcrumb li a:after,
-	.responsive .breamcrumb li a:after,
-	.responsive .breadcrumb li a:before,
-	.responsive .breamcrumb li a:before {
+	.responsive .breadcrumb li a:before {
 		display: none;
 	}
 	
 	.responsive .breadcrumb li:first-child,
-	.responsive .breamcrumb li:first-child,
-	.responsive .breadcrumb li:nth-last-of-type(2),
-	.responsive .breamcrumb li:nth-last-of-type(2) {
+	.responsive .breadcrumb li:nth-last-of-type(2) {
 		display: inline;
 	}
 	
-	.responsive .breadcrumb li:first-child a,
-	.responsive .breamcrumb li:first-child a {
+	.responsive .breadcrumb li:first-child a {
 		border-right: 1px solid rgba(255, 0, 0, 0.2);
 		padding-right: 15px;
 		line-height: 27px;
 		padding-left: 8px !important;
 	}
 	
-	.responsive .breadcrumb li,
-	.responsive .breamcrumb li {
+	.responsive .breadcrumb li {
 		font-size: 14px;
 	}
 	
-	.responsive .breadcrumb li:nth-last-of-type(2) a,
-	.responsive .breamcrumb li:nth-last-of-type(2) a {
+	.responsive .breadcrumb li:nth-last-of-type(2) a {
 		padding-left: 22px;
 	}
 	
-	.responsive .breadcrumb li:nth-last-of-type(2) a:before,
-	.responsive .breamcrumb li:nth-last-of-type(2) a:before {
+	.responsive .breadcrumb li:nth-last-of-type(2) a:before {
 		content:"\f060";
 		display:inline;
 		border: none;
@@ -3720,8 +3699,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		font-family: "FontAwesome";
 	}
 	
-	.responsive .breadcrumb li:first-child a:before,
-	.responsive .breamcrumb li:first-child a:before {
+	.responsive .breadcrumb li:first-child a:before {
 		display: none;
 	}
 	
@@ -3748,7 +3726,7 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	}
 	
 	.responsive button.ui-multiselect {
-		width: auto !important;
+		width: 100% !important;
 	}
 	
 	.responsive.simple-header.mobile .floatRight {
@@ -3864,20 +3842,24 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 		height: auto !important;
 	}
 	
-	.responsive .embed-content div iframe {
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
+	.responsive .article_content iframe {
+		max-width: 100%;
 	}
 	
+	.responsive .embed-content div iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
 	.responsive .embed-content {
-	  position: relative;
-	  padding-bottom: 67.5%;
-	  height: 0;
-	  margin: 10px 0;
-	  overflow: hidden;
+		position: relative;
+		padding-bottom: 67.5%;
+		height: 0;
+		margin: 10px 0;
+		overflow: hidden;
 	}
 	
 	.responsive .langswitch-tooltip-trigger > span {
@@ -3911,6 +3893,13 @@ button#cboxPrevious, button#cboxNext, button#cboxClose, button#cboxSlideshow {
 	#bottommenu_admin, #bottommenu_chars{
 		width: 90% !important;
 	}
+	
+	// relocate portal modules
+	.portal .columnContainer { display:flex; flex-flow:column nowrap; }
+	.portal .columnContainer .first.column { order:1; }
+	.portal .columnContainer .second.column { order:0; }
+	.portal .columnContainer .third.column { order:2; }
+	
 }
 
 @media all and (max-width: 590px) {

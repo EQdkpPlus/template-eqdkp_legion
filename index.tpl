@@ -29,53 +29,6 @@
 				background-attachment: {T_BACKGROUND_POSITION};
 			}
 			<!-- ENDIF -->
-			
-			/*
-			TODO: Wenn PORTAL_WIDTH angegeben wurde, sind neue Berechnungen nötig...
-					Folgende Rechenwege sind der letzte Stand, jeddoch sind sie
-					nicht valide und funktionierten nur bei bestimmten Angaben.
-			
-				--- .breadcrumb-container ---
-			0px - ({T_PORTAL_WIDTH} - {T_COLUMN_LEFT_WIDTH} - {T_COLUMN_RIGHT_WIDTH})
-				--- ul.breadcrumb ---
-			100% + {T_PORTAL_WIDTH_WITHOUT_LEFT_COLUMN}
-			*/
-			
-			<!-- IF not S_IN_ADMIN -->
-			@media all and (min-width: 900px) {
-				<!-- IF S_PORTAL_LEFT -->
-					<!-- IF T_COLUMN_LEFT_WIDTH > 0 -->
-					.breadcrumb-container, .breamcrumb-container { left: -{T_COLUMN_LEFT_WIDTH}; }
-					<!-- ELSE -->
-					.breadcrumb-container, .breamcrumb-container { left: -210px; }
-					<!-- ENDIF -->
-				<!-- ENDIF -->
-				
-				<!-- IF S_PORTAL_LEFT or S_PORTAL_RIGHT -->
-				.breadcrumb-container, .breamcrumb-container {
-					width: calc(100%
-						<!-- IF S_PORTAL_LEFT -->
-							<!-- IF T_COLUMN_LEFT_WIDTH > 0 -->
-							 + {T_COLUMN_LEFT_WIDTH}
-							<!-- ELSE -->
-							 + 210px
-							<!-- ENDIF -->
-						<!-- ENDIF -->
-						<!-- IF S_PORTAL_RIGHT -->
-							<!-- IF T_COLUMN_RIGHT_WIDTH > 0 -->
-							 + {T_COLUMN_RIGHT_WIDTH}
-							<!-- ELSE -->
-							 + 210px
-							<!-- ENDIF -->
-						<!-- ENDIF -->
-						 - 136px
-					);
-				}
-				<!-- ENDIF -->
-			}
-			<!-- ELSE -->
-			.breadcrumb-container, .breamcrumb-container { position: relative; }
-			<!-- ENDIF -->
 		</style>
 		
 		<script type="text/javascript">
@@ -325,6 +278,10 @@
 						</div>
 						<!-- LISTENER adminmenu -->
 					</div>
+					<!-- ENDIF -->
+					
+					<!-- IF S_NORMAL_HEADER -->
+					<div class="breadcrumb-container">{BREADCRUMB}</div>
 					<!-- ENDIF -->
 				</nav>
 			</header>
